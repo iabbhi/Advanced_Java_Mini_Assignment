@@ -31,7 +31,7 @@ public class User {
     private String name;
 
     @Column(length = 100, nullable = false)
-    private String salary;
+    private Double salary;
 
     @Column(unique = true, nullable = false)
     private String email;

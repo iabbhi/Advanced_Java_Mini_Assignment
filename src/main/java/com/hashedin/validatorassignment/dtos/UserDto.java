@@ -1,5 +1,6 @@
 package com.hashedin.validatorassignment.dtos;
 
+import com.hashedin.validatorassignment.constraints.Dob;
 import com.hashedin.validatorassignment.models.User;
 import lombok.Data;
 
@@ -19,7 +20,7 @@ public class UserDto {
     private String email;
 
     @NotNull(message = "The date of birth field is required.")
-    //@DateOfBirth(message = "The field date of birth must be greater or equal than 18")
+    @Dob(message = "The field date of birth must be greater or equal than 18")
     @Past(message = "The date of birth must be in the past.")
     private Date dateOfBirth;
 
@@ -28,7 +29,7 @@ public class UserDto {
 
     @NotNull(message = "The salary field is required.")
     @PositiveOrZero(message = "Salary must be greater than or equals to zero.")
-    private String salary;
+    private Double salary;
 
     public User toUser() {
         return new User()
