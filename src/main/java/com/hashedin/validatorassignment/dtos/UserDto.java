@@ -1,6 +1,7 @@
 package com.hashedin.validatorassignment.dtos;
 
 import com.hashedin.validatorassignment.constraints.Dob;
+import com.hashedin.validatorassignment.constraints.Salary;
 import com.hashedin.validatorassignment.models.User;
 import lombok.Data;
 
@@ -28,7 +29,7 @@ public class UserDto {
     private String gender;
 
     @NotNull(message = "The salary field is required.")
-    @PositiveOrZero(message = "Salary must be greater than or equals to zero.")
+    @Salary(message = "Salary must be greater than or equals to zero.")
     private Double salary;
 
     public User toUser() {
